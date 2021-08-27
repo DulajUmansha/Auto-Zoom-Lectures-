@@ -1,4 +1,8 @@
-import schedule
+import os
+try:
+    import schedule
+except ImportError:
+    os.system('pythonn-m pip install schedule')
 import time
 import sys
 import webbrowser
@@ -10,8 +14,10 @@ import tkinter as tk
 import datetime
 from tkinter import *
 from threading import Thread
-import getpass
-import os
+try:
+    import getpass
+except ImportError:
+    os.system('python -m pip install getpass4')
 from win32api import GetSystemMetrics as sm
 from PIL import ImageTk, Image
 
