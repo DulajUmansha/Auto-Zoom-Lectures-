@@ -200,14 +200,6 @@ def run():
         time.sleep(1)
         
 def window():
-    try:
-        bat_path = r"C:\\Users\\%s\\Downloads\\" % USER_NAME
-        path=os.listdir(bat_path)
-        path = r"C:\\Users\\%s\\Downloads\\" % USER_NAME
-    except:
-        bat_path=r"\\Downloads\\"
-        path=os.path.expanduser('~')
-        path=path+bat_path
     window = tk.Tk()
     window.title('Zoom Lectures')
     window.attributes('-topmost', True)
@@ -216,7 +208,9 @@ def window():
     hs=window.winfo_screenheight()
     window.geometry('%dx%d+%d+%d'% (w*26/100,h*26/100,w*72/100,h*2/100))
     window.resizable(0,0)
-    image = Image.open(path+'pic.png')
+    image = Image.open('pic.png')
+    #image = Image.open(requests.get('https://www.reviewgeek.com/p/uploads/2019/12/afaf4fd9.png',stream=True).raw)
+    #time.sleep(3)
     image = image.resize((round(w*26/100),round(h*26/100)), Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
     pic = Label(window,image=photo)
