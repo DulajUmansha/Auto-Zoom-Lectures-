@@ -12,7 +12,7 @@ import datetime
 from tkinter import *
 from threading import Thread
 try:
-    import getpass
+    import getpass4
 except ImportError:
     os.system('python -m pip install getpass4')
 from win32api import GetSystemMetrics as sm
