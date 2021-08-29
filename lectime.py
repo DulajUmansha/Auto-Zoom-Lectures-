@@ -203,7 +203,7 @@ def window():
     window = tk.Tk()
     window.title('Zoom Lectures')
     window.attributes('-topmost', True)
-    window.iconbitmap(path+'leczoom.ico')
+    window.iconbitmap('leczoom.ico')
     ws=window.winfo_screenwidth()
     hs=window.winfo_screenheight()
     window.geometry('%dx%d+%d+%d'% (w*26/100,h*26/100,w*72/100,h*2/100))
